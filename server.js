@@ -79,9 +79,7 @@ wsServer.on('connection', (ws) => {
         event: 'morePosts',
         posts: previous,
       });
-      users.forEach((user) => {
-        user.send(chaosEvent);
-      });
+      ws.send(chaosEvent);
     }
 
     if (request.event === 'pinPost') {
