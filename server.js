@@ -39,9 +39,7 @@ wsServer.on('connection', (ws) => {
           pinId,
         },
       });
-      users.forEach((user) => {
-        user.send(chaosEvent);
-      });
+      ws.send(chaosEvent);
     }
 
     if (request.event === 'newPost') {
